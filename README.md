@@ -15,15 +15,21 @@ To install compiled Asset Factory plugins:
 3. Restart Cascade Server
 4. Navigate to **Global->Administration->Asset Factories->Manage Plugins**
 5. In the **Add a Plugin** field, enter the fullet qualified Java class name of each plugin
-    - E.g. `com.hannonhill.cascade.plugin.AssetFieldsPlugin`
+    - E.g. `com.hannonhill.cascade.plugin.assetfactory.AssetFieldsPlugin`
 6. Click the Submit button
 
 Compiling Plugins
 ---------------
 
-**Prerequisites:** Because this is an Eclipse project that uses Maven, both Eclipse and Maven must be installed.
+**Prerequisites:** Because this is an Maven-Eclipse project, both Eclipse and Maven must be installed.
 
-1. Create your new plugin class within the `com.hannonhill.cascade.plugin` package
+1. Create your new plugin class within the `com.hannonhill.cascade.plugin.assetfactory` package
 2. Add any required dependencies to the Maven pom.xml file
-3. Right-click the Project and go to **Run As->Maven->Build**
+3. Building:
+    - Within Eclipse
+        1. Right-click the Project and go to **Run As->Maven->Build...**
+        2. Type `clean package` in the **Goals** field and click **Run**
+    - From command line
+        1. Navigate to the project
+        2. Type `mvn clean package`
 4. Locate the compiled JAR file within the **target** directory
