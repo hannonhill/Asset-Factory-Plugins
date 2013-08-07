@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import com.google.common.base.Strings;
 
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.PluginException;
@@ -13,6 +12,7 @@ import com.hannonhill.cascade.api.asset.admin.AssetFactory;
 import com.hannonhill.cascade.api.asset.common.Metadata;
 import com.hannonhill.cascade.api.asset.home.FolderContainedAsset;
 import com.hannonhill.cascade.api.asset.home.MetadataAwareAsset;
+import com.hannonhill.commons.util.StringUtil;
 
 /**
  * This plugin is run to automatically set the review date of an asset before the initial
@@ -43,8 +43,8 @@ public class SetReviewDatePlugin extends BaseAssetFactoryPlugin
             {
                 // set the start date to the current time
                 long offset = 0;
-                String offsetStr = getParameter(PARAM_OFFSET_NAME_KEY);
-                if (Strings.isNullOrEmpty(offsetStr) == false)
+                String offsetStr = getParameter(PARAM_OFFSET_NAME_KEY);                
+                if (StringUtil.isNotEmpty(offsetStr) == false)
                 {
                     try
                     {
