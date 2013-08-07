@@ -27,8 +27,9 @@ Compiling Plugins
 2. Add any required dependencies to the Maven pom.xml file
 3. Building:
     - Within Eclipse
-        1. Right-click the Project and go to **Run As->Maven->Build...**
+        1. Right-click the Project and go to **Run As->Maven->Maven build...**
         2. Type `clean package` in the **Goals** field and click **Run**
+        - Note: After building at least once, you can then use **Run As->Maven->Maven build** and choose the previous build setting from the configuration menu.
     - From command line
         1. Navigate to the project
         2. Type `mvn clean package`
