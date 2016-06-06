@@ -229,7 +229,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
             {
                 if (node.isGroup() && curNode.equals(node.getIdentifier()))
                 {
-                    return searchStructuredData(node.getGroup(), subNodes);
+                    liReturn.addAll(searchStructuredData(node.getGroup(), subNodes));
                 }
             }
         }
