@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.FatalPluginException;
 import com.cms.assetfactory.PluginException;
@@ -229,7 +231,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
             {
                 if (node.isGroup() && curNode.equals(node.getIdentifier()))
                 {
-                    return searchStructuredData(node.getGroup(), subNodes);
+                    liReturn.addAll(searchStructuredData(node.getGroup(), subNodes));
                 }
             }
         }
@@ -239,7 +241,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
             {
                 if (node.isGroup())
                 {
-                    return searchStructuredData(node.getGroup(), sdIdentifier);
+                    liReturn.addAll(searchStructuredData(node.getGroup(), sdIdentifier));
                 }
                 else if (sdIdentifier.equals(node.getIdentifier()) && node.isText())
                 {
