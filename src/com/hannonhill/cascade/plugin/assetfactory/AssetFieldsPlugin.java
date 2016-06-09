@@ -6,8 +6,6 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.FatalPluginException;
 import com.cms.assetfactory.PluginException;
@@ -142,7 +140,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(reviewDate);
                 Formatter format = new Formatter();
-                String stDate = format.format("%tF", cal).toString();                
+                String stDate = format.format("%tF", cal).toString();
                 format.close();
                 liReturn.add(stDate);
             }
@@ -252,7 +250,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
 	                    if (nodeValues.length > 0 && nodeValues[0] != null && nodeValues[0].trim() != "")
 	                    {
 	                        nodeValue = nodeValues[0];
-	
+
 	                        // for date/time & calendar, return formatted date string, i.e. yyyy-mm-dd
 	                        if (node.getTextNodeOptions().isDatetime())
 	                        {
@@ -266,19 +264,19 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
 	                        }
 	                        else if (node.getTextNodeOptions().isCalendar())
 	                        {
-	                            
+
 	                            String[] dateParts = nodeValue.split("-");
 	                            int month = Integer.parseInt(dateParts[0]) - 1; // because month is zero-based
 	                            int day = Integer.parseInt(dateParts[1]);
 	                            int year = Integer.parseInt(dateParts[2]);
-	
+
 	                            Calendar cal = Calendar.getInstance();
 	                            cal.set(year, month, day);
 	                            Formatter format = new Formatter();
 	                            String stDate = format.format("%tF", cal).toString();
 	                            format.close();
-	                            liReturn.add(stDate);                            
-	
+	                            liReturn.add(stDate);
+
 	                        }
 	                        // for check-box & multi-select (where multiple values are allowed), concatenate all selected values
 	                        else if (node.getTextNodeOptions().isCheckbox() || node.getTextNodeOptions().isMultiselect())
@@ -289,7 +287,7 @@ public abstract class AssetFieldsPlugin extends BaseAssetFactoryPlugin
 	                                {
 	                                    liReturn.add(nodeValues[i].trim());
 	                                }
-	
+
 	                            }
 	                        }
 	                        else if (!(node.getTextNodeOptions().isWysiwyg()))
