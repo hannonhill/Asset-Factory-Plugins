@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Asset-Factory-Plugins</groupId>
   <artifactId>Asset-Factory-Plugins</artifactId>
-  <version>8.7</version>
+  <version>8.9</version>
   <name>Asset Factory Plugins</name>
   <description>Custom Asset Factory plugins for Cascade Server.</description>
   <build>
@@ -42,12 +42,12 @@
 		<dependency>
 			<groupId>com.hannonhill.cascade</groupId>
 			<artifactId>cascade-api</artifactId>
-			<version>8.7</version>
+			<version>8.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.cms.assetfactory</groupId>
 			<artifactId>assetfactory-plugins</artifactId>
-			<version>8.7</version>
+			<version>8.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.hannonhill.commons</groupId>

@@ -4,6 +4,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hannonhill.cascade</groupId>
   <artifactId>cascade-api</artifactId>
-  <version>8.7</version>
+  <version>8.9</version>
   <description>POM was created from install:install-file</description>
 </project>
