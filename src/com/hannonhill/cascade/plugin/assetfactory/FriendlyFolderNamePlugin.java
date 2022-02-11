@@ -3,14 +3,14 @@ package com.hannonhill.cascade.plugin.assetfactory;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.PluginException;
 import com.hannonhill.cascade.api.asset.admin.AssetFactory;
 import com.hannonhill.cascade.api.asset.home.FolderContainedAsset;
 import com.hannonhill.cascade.model.dom.identifier.EntityTypes;
 import com.hannonhill.commons.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This plugin is run to restrict creation of a Folder asset based on whether the asset's name matches the given regular 
@@ -21,7 +21,7 @@ import com.hannonhill.commons.util.StringUtil;
  */
 public class FriendlyFolderNamePlugin extends BaseAssetFactoryPlugin
 {
-    private static final Logger LOG = getLogger(FriendlyFolderNamePlugin.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FriendlyFolderNamePlugin.class);
     
     private static final String DESCRIPTION_KEY = "plugin.assetfactory.friendlyfoldername.description";
     private static final String NAME_KEY = "plugin.assetfactory.friendlyfoldername.name";

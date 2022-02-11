@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.PluginException;
 import com.hannonhill.cascade.api.asset.admin.AssetFactory;
@@ -13,6 +11,8 @@ import com.hannonhill.cascade.api.asset.common.Metadata;
 import com.hannonhill.cascade.api.asset.home.FolderContainedAsset;
 import com.hannonhill.cascade.api.asset.home.MetadataAwareAsset;
 import com.hannonhill.commons.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This plugin is run to automatically set the review date of an asset before the initial
@@ -24,7 +24,7 @@ import com.hannonhill.commons.util.StringUtil;
  */
 public class SetReviewDatePlugin extends BaseAssetFactoryPlugin
 {
-    private static final Logger LOG = getLogger(SetReviewDatePlugin.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SetReviewDatePlugin.class);
 
     private static final String DESCRIPTION_KEY = "plugin.assetfactory.setreviewdate.description";
     private static final String NAME_KEY = "plugin.assetfactory.setreviewdate.name";

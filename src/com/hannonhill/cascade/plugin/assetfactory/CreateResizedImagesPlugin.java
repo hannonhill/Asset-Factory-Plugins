@@ -10,7 +10,6 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import org.apache.log4j.Logger;
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
@@ -31,6 +30,8 @@ import com.hannonhill.cascade.model.dom.identifier.EntityType;
 import com.hannonhill.cascade.model.dom.identifier.EntityTypes;
 import com.hannonhill.commons.util.FileExtension;
 import com.hannonhill.commons.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Provides the ability to resize an image upon creation to a given
@@ -41,7 +42,7 @@ import com.hannonhill.commons.util.StringUtil;
  */
 public class CreateResizedImagesPlugin extends BaseAssetFactoryPlugin
 {
-    private static final Logger LOG = getLogger(CreateResizedImagesPlugin.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CreateResizedImagesPlugin.class);
 
     private static final String DESCRIPTION_KEY = "plugin.assetfactory.createresizedimages.description";
     private static final String NAME_KEY = "plugin.assetfactory.createresizedimages.name";
