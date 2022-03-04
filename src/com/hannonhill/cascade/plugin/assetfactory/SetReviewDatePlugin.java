@@ -44,7 +44,7 @@ public class SetReviewDatePlugin extends BaseAssetFactoryPlugin
                 // set the start date to the current time
                 long offset = 0;
                 String offsetStr = getParameter(PARAM_OFFSET_NAME_KEY);                
-                if (StringUtil.isNotEmpty(offsetStr) == false)
+                if (StringUtil.isNotEmpty(offsetStr))
                 {
                     try
                     {
