@@ -1,27 +1,21 @@
 package com.hannonhill.cascade.plugin.assetfactory;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-
 import com.cms.assetfactory.BaseAssetFactoryPlugin;
 import com.cms.assetfactory.PluginException;
 import com.hannonhill.cascade.api.asset.admin.AssetFactory;
 import com.hannonhill.cascade.api.asset.common.Identifier;
-import com.hannonhill.cascade.api.asset.common.Metadata;
 import com.hannonhill.cascade.api.asset.home.FolderContainedAsset;
-import com.hannonhill.cascade.api.asset.home.MetadataAwareAsset;
 import com.hannonhill.cascade.api.operation.Publish;
-import com.hannonhill.cascade.api.operation.Read;
 import com.hannonhill.cascade.api.operation.exception.ModelOperationException;
 import com.hannonhill.cascade.api.operation.exception.OperationValidationException;
-import com.hannonhill.cascade.api.operation.result.PublishOperationResult;
-import com.hannonhill.cascade.api.operation.result.ReadOperationResult;
 import com.hannonhill.cascade.model.dom.identifier.EntityType;
 import com.hannonhill.cascade.model.dom.identifier.EntityTypes;
 import com.hannonhill.commons.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This plugin is run to automatically set the review date of an asset before the initial
@@ -33,7 +27,7 @@ import com.hannonhill.commons.util.StringUtil;
  */
 public class PublishPublishSetOnCreatePlugin extends BaseAssetFactoryPlugin
 {
-    private static final Logger LOG = getLogger(PublishPublishSetOnCreatePlugin.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PublishPublishSetOnCreatePlugin.class);
 
     private static final String DESCRIPTION_KEY = "plugin.assetfactory.publishpublishsetoncreate.description";
     private static final String NAME_KEY = "plugin.assetfactory.publishpublishsetoncreate.name";
@@ -95,9 +89,9 @@ public class PublishPublishSetOnCreatePlugin extends BaseAssetFactoryPlugin
                 LOG.debug("Attempting to publish Publish Set: " + publishSetId);
                 publish.perform();
             } catch (ModelOperationException e) {
-                LOG.debug("ModelOperationException: "+e.getMessage());
+                LOG.debug("ModelOperationException: ", e);
             } catch (OperationValidationException e) {
-                LOG.debug("OperationValidationException: "+e.getMessage());
+                LOG.debug("OperationValidationException: ", e);
             }
         }
     }
