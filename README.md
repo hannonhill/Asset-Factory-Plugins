@@ -1,7 +1,7 @@
 Asset Factory Plugins
 ===============
 
-This project contains various Asset Factory Plugins that can be used within Cascade CMS. The project is organized with tags that correspond to specific Cascade CMS versions; if a plugin is present under a specific tag, it is compatible with that version of Cascade Server. For example, the tag **7.4.x** means that each plugin listed will work with Cascade CMS 7.4.1.
+This project contains various Asset Factory Plugins that can be used within Cascade CMS. The project is organized with tags that correspond to specific Cascade CMS versions; if a plugin is present under a specific tag, it is compatible with that version of Cascade CMS. For example, the tag **7.4.x** means that each plugin listed will work with Cascade CMS 7.4.1.
 
 This project also utilizes Github Releases that correspond to specific Cascade CMS versions. Each release will contain a compiled JARs for each available plugin, a JAR containing all available plugins and a Zip file containing each individially compiled plugin.
 
@@ -11,7 +11,7 @@ Installing Plugins into Cascade CMS
 To install compiled Asset Factory plugins:
 
 1. Shut down Cascade CMS
-2. Place the compiled JAR file(s) in `<Tomcat_Installation_Directory>/webapps/ROOT/WEB-INF/lib` within the Cascade Server installation directory.
+2. Place the compiled JAR file(s) in `<Tomcat_Installation_Directory>/webapps/ROOT/WEB-INF/lib` within the Cascade CMS installation directory.
 3. Restart Cascade CMS
 4. Navigate to **Administration->Asset Factory Plugins**
 5. In the **Add a Plugin** field, enter the fullet qualified Java class name of each plugin
